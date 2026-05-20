@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/Cosmica",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/cosmica",
+      "destination": "/index.html"
+    }
+  ]
+}

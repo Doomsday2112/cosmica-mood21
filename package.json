@@ -1,0 +1,9 @@
+{
+  "name": "cosmica-mood",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cosmica Mood Helper, a cosmic AI mood companion.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

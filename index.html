@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmica Mood Helper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-mood="mystic">
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <div class="aurora" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <section class="mood-oracle" aria-labelledby="app-title">
+        <div class="brand-row">
+          <div class="sigil" aria-hidden="true">✦</div>
+          <div>
+            <p class="eyebrow">cosmic mood helper</p>
+            <h1 id="app-title">Cosmica</h1>
+          </div>
+        </div>
+
+        <div class="orb-wrap" aria-hidden="true">
+          <div class="orb">
+            <div class="orb-core"></div>
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+          </div>
+        </div>
+
+        <div class="prompt-block">
+          <p class="kicker">The app asks</p>
+          <h2>How are you feeling today?</h2>
+          <p class="support-copy">Type a few words, choose a signal, and let the interface become your emotional weather.</p>
+        </div>
+
+        <form id="mood-form" class="mood-form">
+          <label for="mood-input">Mood message</label>
+          <textarea id="mood-input" rows="5" placeholder="Example: I’m tired and overwhelmed, but trying to stay focused."></textarea>
+
+          <div class="signal-row" aria-label="Quick mood signals">
+            <button type="button" class="chip" data-signal="happy">😊 happy</button>
+            <button type="button" class="chip" data-signal="stressed">😵 stressed</button>
+            <button type="button" class="chip" data-signal="excited">✨ excited</button>
+            <button type="button" class="chip" data-signal="lonely">🌙 lonely</button>
+            <button type="button" class="chip" data-signal="tired">💤 tired</button>
+          </div>
+
+          <div class="control-row">
+            <div class="color-picks" aria-label="Mood color choices">
+              <button type="button" class="swatch nebula active" data-color="nebula" aria-label="Purple nebula"></button>
+              <button type="button" class="swatch sunset" data-color="sunset" aria-label="Warm sunset"></button>
+              <button type="button" class="swatch rainy" data-color="rainy" aria-label="Rainy blue"></button>
+              <button type="button" class="swatch sunrise" data-color="sunrise" aria-label="Golden sunrise"></button>
+            </div>
+            <button class="primary-action" type="submit">Read My Aura</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="insight-panel" aria-labelledby="insight-title">
+        <div class="panel-header">
+          <p class="eyebrow">mood reading</p>
+          <h2 id="insight-title">Mystic calm</h2>
+        </div>
+
+        <div class="meter" aria-label="Mood intensity">
+          <span style="--value: 68%"></span>
+        </div>
+
+        <p id="mood-summary" class="summary">Your aura is waiting for a signal. Share a sentence and I’ll reflect back a gentle read.</p>
+
+        <div class="suggestion-grid" id="suggestions">
+          <article>
+            <span>🎵</span>
+            <h3>Music</h3>
+            <p>Dreamy ambient pads with slow piano.</p>
+          </article>
+          <article>
+            <span>🧘</span>
+            <h3>Body</h3>
+            <p>Unclench your jaw, drop your shoulders, breathe out slowly.</p>
+          </article>
+          <article>
+            <span>🎨</span>
+            <h3>Aesthetic</h3>
+            <p>Purple nebula, silver dust, soft moonlight.</p>
+          </article>
+          <article>
+            <span>📔</span>
+            <h3>Prompt</h3>
+            <p>What does your mind need less of right now?</p>
+          </article>
+        </div>
+
+        <div class="comfort-chat">
+          <div>
+            <p class="eyebrow">ai comfort chat</p>
+            <p id="comfort-line">I can offer a small next step, not a diagnosis. Your pace can be soft today.</p>
+          </div>
+          <button id="new-quote" type="button" class="icon-button" aria-label="New calming quote">↻</button>
+        </div>
+        <p id="ai-status" class="ai-status">Local aura mode is ready. AI mode activates when the server key is available.</p>
+      </section>
+
+      <section class="journal-panel" aria-labelledby="journal-title">
+        <div class="panel-header">
+          <p class="eyebrow">tiny journal</p>
+          <h2 id="journal-title">Daily sky log</h2>
+        </div>
+        <div id="journal-list" class="journal-list"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
